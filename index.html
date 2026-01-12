@@ -774,8 +774,105 @@ body {
     .specs-wrapper { grid-template-columns: 1fr; gap: 60px; }
     .meter-grid { height: 220px; }
 }
+ /* logo section */
+ .hikari-logo-vault {
+    background: #050505;
+    padding: 100px 5%;
+    display: flex;
+    justify-content: center;
+}
 
+.vault-container {
+    max-width: 1300px;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 50px;
+    align-items: center;
+}
 
+.glitch-text {
+    color: #00f2ff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.main-heading {
+    font-size: 3.5rem;
+    color: #fff;
+    margin: 20px 0;
+    line-height: 1.1;
+}
+
+/* The Magic Grid */
+.logo-display-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.logo-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+    transition: 0.5s all ease;
+    cursor: none; /* Add a custom cursor here if you want */
+}
+
+.logo-box.tall { height: 520px; grid-row: span 2; }
+
+.inner-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo-box img {
+    max-width: 60%;
+    filter: drop-shadow(0 0 10px rgba(0,242,255,0));
+    transition: 0.5s;
+}
+
+/* Hover State: Neon Activation */
+.logo-box:hover {
+    border-color: #00f2ff;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+    transform: translateY(-10px) rotateX(10deg);
+}
+
+.logo-box:hover img {
+    filter: drop-shadow(0 0 15px rgba(0,242,255,0.8));
+    transform: scale(1.1);
+}
+
+.box-overlay {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, #00f2ff33);
+    transition: 0.4s;
+    text-align: center;
+    color: #00f2ff;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.logo-box:hover .box-overlay { bottom: 0; }
+
+@media (max-width: 900px) {
+    .vault-container { grid-template-columns: 1fr; }
+    .logo-display-area { grid-template-columns: 1fr; }
+    .logo-box.tall { height: 250px; grid-row: auto; }
+}
 
     </style>
 </head>
@@ -797,7 +894,7 @@ body {
             <div class="hero-text">
                 <div class="hero-badge reveal">
                     <div style="width:10px; height:10px; background:#27c93f; border-radius:50%;"></div>
-                    Web Designer @ Aaj Tech Lab
+                    Web Designer/Graphic Designer @ Aaj Tech Lab
                 </div>
                 
                 <h1 class="reveal">
@@ -807,7 +904,7 @@ body {
                 </h1>
                 
                 <p class="reveal" style="margin-bottom: 40px; font-size: 1.2rem; line-height: 1.6; max-width: 500px; opacity: 0.8;">
-                    I am Kanishka Verma, a Web Designer at <strong>Aaj Tech Lab</strong>. With 1 year of professional experience and a massive portfolio of diverse projects, I turn complex ideas into aesthetic realities.
+                    I am Kanishka Verma, a Graphic & Web Designer at <strong>Aaj Tech Lab</strong>. With 1 year of professional experience and a massive portfolio of diverse projects, I turn complex ideas into aesthetic realities.
                 </p>
 
                 <a href="#work" class="hero-cta hover-target reveal">EXPLORE MY WORKS</a>
@@ -926,7 +1023,54 @@ body {
         </div>
     </div>
 </section>
+<!-- logo section -->
+<section class="hikari-logo-vault">
+    <div class="vault-container">
+        <div class="text-side">
+            <span class="glitch-text">Visual Identity</span>
+            <h2 class="main-heading">Logos I've Crafted</h2>
+            <p>Blending Anime Aesthetics with Modern Corporate Identity.</p>
+        </div>
 
+        <div class="logo-display-area">
+            <div class="logo-box">
+                <div class="inner-content">
+                    <img src="your-logo-1.png" alt="Logo Design">
+                    <div class="box-overlay">
+                        <span>Anime Merchandise</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="logo-box tall">
+                <div class="inner-content">
+                    <img src="your-logo-2.png" alt="Logo Design">
+                    <div class="box-overlay">
+                        <span>Tech Startup</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="logo-box">
+                <div class="inner-content">
+                    <img src="your-logo-3.png" alt="Logo Design">
+                    <div class="box-overlay">
+                        <span>Gaming Clan</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="logo-box">
+                <div class="inner-content">
+                    <img src="your-logo-4.png" alt="Logo Design">
+                    <div class="box-overlay">
+                        <span>E-commerce</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
@@ -1148,12 +1292,12 @@ body {
     <footer id="contact">
         <div class="footer-big-text hover-target">LET'S BUILD<br>TOGETHER</div>
         <p style="font-size: 1.5rem; margin-bottom: 40px;">Ready to elevate your digital presence?</p>
-        <a href="mailto:kanishka@example.com" class="hero-cta hover-target" style="box-shadow: 6px 6px 0px #fff; text-decoration: none;">SAY HELLO</a>
+        <a href="https://wa.me/916395088771?text=Hi%20there!%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20chat%20about%20a%20design%20project." class="hero-cta hover-target" style="box-shadow: 6px 6px 0px #fff; text-decoration: none;">SAY HELLO</a>
         
         <div style="margin-top: 80px; display: flex; justify-content: center; gap: 40px;">
-            <a href="#" class="hover-target" style="color:white;"><i class="fab fa-linkedin fa-2x"></i></a>
-            <a href="#" class="hover-target" style="color:white;"><i class="fab fa-github fa-2x"></i></a>
-            <a href="#" class="hover-target" style="color:white;"><i class="fab fa-behance fa-2x"></i></a>
+            <a href="https://www.linkedin.com/in/kanishka-verma-571316325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hover-target" style="color:white;"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://github.com/vermakanishka0911" class="hover-target" style="color:white;"><i class="fab fa-github fa-2x"></i></a>
+    
         </div>
     </footer>
 
