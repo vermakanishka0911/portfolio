@@ -103,12 +103,20 @@ body {
         }
 
         .logo {
+    font-family: var(--font-display);
+    font-weight: 800;
+    /* clamp(minimum, responsive size, maximum) */
+    font-size: clamp(1.2rem, 5vw, 1.8rem); 
+    letter-spacing: -1px;
+    white-space: nowrap; /* Taki naam do line mein na tute */
+    text-transform: uppercase;
+}
 
-            font-family: var(--font-display);
-            font-weight: 800;
-            font-size: 1.6rem;
-            letter-spacing: -1px;
-        }
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.1rem; /* Bahut choti screen ke liye fix size */
+    }
+}
 
         .nav-links { display: flex; gap: 40px; }
         .nav-link {
@@ -1329,6 +1337,8 @@ body {
         }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        
     </script>
 </body>
 </html>
